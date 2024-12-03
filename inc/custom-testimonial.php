@@ -1,70 +1,58 @@
 <div class="ws-testimonial-section">
     <button class="slider-button prev" aria-label="Previous slide">&#10094;</button>
-        <button class="slider-button next" aria-label="Next slide">&#10095;</button>
+    <button class="slider-button next" aria-label="Next slide">&#10095;</button>
 
     <div class="testimonial-slider">
         <div class="testimonial-container">
-            <div class="testimonial">
-                <div class="comment">"John's comment Lorem ipsum odor amet, consectetuer adipiscing elit. Fames sodales dignissim duis lacinia euismod, elementum ad per."</div>
-                <div class="bio">
-                    <div class="bio-innerbox">
-                        <img src="https://www.kellyheckphotography.com/wp-content/uploads/2022/02/Amber-1705-cropped.jpg" alt="Headshot 1" class="headshot">
-                        <div class="right-column">
-                            <div class="name">John Doe</div>
-                            <div class="company">Example Inc.</div>
+
+        <?php 
+        // ===== Testimonial Loop START ===== //
+        
+        // Custom query for testimonials
+        $args = array(
+            'post_type'      => 'ws-testimonial',
+            'posts_per_page' => -1, 
+        );
+
+        $testimonial_query = new WP_Query($args);
+
+        if ($testimonial_query->have_posts()) :
+            while ($testimonial_query->have_posts()) :
+                $testimonial_query->the_post();
+        
+                // Get ACF fields
+                $name = get_field('name');
+                $photo_id = get_field('photo');
+                $photo_url = $photo_id ? wp_get_attachment_image_url($photo_id, 'medium') : null; // Get image URL
+                $email = get_field('email');
+                $company = get_field('company');
+                $company_website = get_field('company_website'); // echo esc_url($company_website); with a tag
+                $excerpt = get_field('excerpt');
+                $comment = get_field('comment');
+                ?>
+                
+                <div class="testimonial">
+                    <div class="comment"><?php echo esc_html($excerpt); ?></div>
+                    <div class="bio">
+                        <div class="bio-innerbox">
+                            <?php if ($photo_url) : ?>
+                                <img src="<?php echo esc_url($photo_url); ?>" alt="<?php echo esc_attr($name); ?>" class="headshot">
+                            <?php endif; ?>
+                            <div class="right-column">
+                                <div class="name"><?php echo esc_html($name); ?></div>
+                                <div class="company"><?php echo esc_html($company); ?></div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="testimonial">
-                <div class="comment">"Jane's comment Lorem ipsum odor amet, consectetuer adipiscing elit. Fames sodales dignissim duis lacinia euismod, elementum ad per."</div>
-                <div class="bio">
-                    <div class="bio-innerbox">
-                        <img src="https://www.kellyheckphotography.com/wp-content/uploads/2022/02/Amber-1705-cropped.jpg" alt="Headshot 2" class="headshot">
-                        <div class="right-column">
-                            <div class="name">Jane Smith</div>
-                            <div class="company">Sample Co.</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial">
-                <div class="comment">"Alice's comment Lorem ipsum odor amet, consectetuer adipiscing elit. Fames sodales dignissim duis lacinia euismod, elementum ad per."</div>
-                <div class="bio">
-                    <div class="bio-innerbox">
-                        <img src="https://www.kellyheckphotography.com/wp-content/uploads/2022/02/Amber-1705-cropped.jpg" alt="Headshot 3" class="headshot">
-                        <div class="right-column">
-                            <div class="name">Alice Brown</div>
-                            <div class="company">Acme Corp.</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial">
-                <div class="comment">"Alice's comment Lorem ipsum odor amet, consectetuer adipiscing elit. Fames sodales dignissim duis lacinia euismod, elementum ad per."</div>
-                <div class="bio">
-                    <div class="bio-innerbox">
-                        <img src="https://www.kellyheckphotography.com/wp-content/uploads/2022/02/Amber-1705-cropped.jpg" alt="Headshot 4" class="headshot">
-                        <div class="right-column">
-                            <div class="name">Alice Brown123</div>
-                            <div class="company">Acme Corp.</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial">
-                <div class="comment">"Alice's comment Lorem ipsum odor amet, consectetuer adipiscing elit. Fames sodales dignissim duis lacinia euismod, elementum ad per."</div>
-                <div class="bio">
-                    <div class="bio-innerbox">
-                        <img src="https://www.kellyheckphotography.com/wp-content/uploads/2022/02/Amber-1705-cropped.jpg" alt="Headshot 5" class="headshot">
-                        <div class="right-column">    
-                            <div class="name">Alice Brown456</div>
-                            <div class="company">Acme Corp.</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Add more testimonials as needed -->
-        </div>
-    </div>
-</div>
+                <?php
+            endwhile;
+            wp_reset_postdata(); 
+        else :
+            echo '<p>No testimonials found.</p>';
+        endif;      
+        // ===== Testimonial Loop END ===== //
+        ?>
+        </div><!-- testimonial-container end -->
+    </div><!-- testimonial-slider end -->
+</div><!-- testimonial-section end -->

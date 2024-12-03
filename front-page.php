@@ -33,6 +33,7 @@ get_header();
 
 </main><!-- #main -->
 
+<h2>Testimonials</h2>
 <?php
 require get_template_directory() . '/inc/custom-testimonial.php';
 get_sidebar();
