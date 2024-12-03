@@ -1,0 +1,41 @@
+.site-footer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 2rem 0 0 0;
+}
+
+.site-footer .site-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.site-footer .site-info .footer-site-logo {
+  width: 200px;
+}
+
+.site-footer .site-info .copyright {
+  font-size: 12px;
+}
+
+.site-footer .site-info .legal-stuff {
+  ul,
+  li {
+    margin: 0;
+    padding: 0;
+  }
+  ul {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    list-style: none;
+  }
+  ul li {
+  }
+  ul li a {
+    font-size: 12px;
+    padding: 16px;
+    margin: 0;
+  }
+}

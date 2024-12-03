@@ -13,17 +13,14 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'whitespace' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'whitespace' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'whitespace' ), 'whitespace', '<a href="http://wsstudio.ca">Whitespace Studio</a>' );
-				?>
+			<a href="<?php echo get_home_url(); ?>"><img src="<?php echo esc_url( wp_get_attachment_url( get_theme_mod( 'custom_logo' ) ) ); ?>" alt="site logo" class="footer-site-logo"></a>
+			<p class="copyright">Copyright &copy; <?php echo date('Y'); ?> Whitespace Studio</p>
+			<div class="legal-stuff">
+				<ul>
+					<li><a href="<?php echo get_permalink( get_page_by_path('privacy-policy') ); ?>">Privacy Policy</a></li>
+					<li><a href="<?php echo get_permalink( get_page_by_path('sample-page') ); ?>">Sample Page</a></li>
+				</ul>
+			</div>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
