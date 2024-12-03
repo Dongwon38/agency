@@ -1,0 +1,146 @@
+// TESTING
+
+#metaslider_109 > ul {
+  display: none;
+}
+
+// TESTING END
+
+.ws-testimonial-section {
+  max-width: 75rem; // 1200px
+  margin: auto;
+  position: relative;
+}
+
+// button
+
+.ws-testimonial-section .slider-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  color: #333;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.ws-testimonial-section .prev {
+  left: 5px;
+}
+
+.ws-testimonial-section .next {
+  right: 5px;
+}
+
+// slider
+
+.ws-testimonial-section .testimonial-slider {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.ws-testimonial-section .testimonial-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+  flex-wrap: nowrap;
+}
+
+// =============== single testimonial =============== //
+
+.ws-testimonial-section .testimonial {
+  flex: 0 0 calc(100% / 3); /* slidesPerView = 3 */
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+// hover effect
+.ws-testimonial-section .testimonial:hover .comment {
+  opacity: 1;
+  visibility: visible;
+}
+
+.ws-testimonial-section .testimonial:hover .bio {
+  background-color: #151515;
+}
+
+.ws-testimonial-section .testimonial:hover .bio .name {
+  color: white;
+}
+
+.ws-testimonial-section .testimonial:hover .bio .company {
+  color: #ddd;
+}
+
+.ws-testimonial-section .comment,
+.ws-testimonial-section .bio,
+.ws-testimonial-section .bio .name,
+.ws-testimonial-section .bio .company {
+  transition: all 0.3s ease-in-out;
+}
+
+.ws-testimonial-section .comment {
+  font-size: 20px;
+  font-weight: 900;
+  margin: 2rem 2rem;
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (min-width: 1200px) {
+  .ws-testimonial-section .comment {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.ws-testimonial-section .bio {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: transparent;
+}
+
+.ws-testimonial-section .bio-innerbox {
+  display: flex;
+  width: 100%;
+  padding: 16px 32px;
+  max-width: 300px;
+}
+
+.ws-testimonial-section .headshot {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 0;
+}
+
+.ws-testimonial-section .right-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.ws-testimonial-section .bio .name {
+  font-weight: bold;
+  margin: 0 0 4px;
+  color: #333;
+}
+
+.ws-testimonial-section .bio .company {
+  font-size: 0.9em;
+  color: #777;
+}
+
+// =============== single testimonial End =============== //
