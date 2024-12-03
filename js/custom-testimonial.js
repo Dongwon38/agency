@@ -1,9 +1,9 @@
 // Select DOM elements
+const testimonialSection = document.querySelector(".ws-testimonial-section"); // Section containing the testimonials
 const container = document.querySelector(".testimonial-container"); // The main container holding all testimonials
 const testimonials = Array.from(document.querySelectorAll(".testimonial")); // Array of individual testimonial elements
 const prevButton = document.querySelector(".prev"); // Button to navigate to the previous slide
 const nextButton = document.querySelector(".next"); // Button to navigate to the next slide
-const testimonialSection = document.querySelector(".testimonial-section"); // Section containing the testimonials
 
 let slidesPerView = calculateSlidesPerView(); // Number of slides visible at a time, calculated based on screen width
 let index = 0; // Current slide index
@@ -62,6 +62,7 @@ function prevSlide() {
 
 // Start the auto-slide functionality (slides change every 10 seconds)
 function startAutoSlide() {
+  stopAutoSlide();
   autoSlideInterval = setInterval(nextSlide, 10000);
 }
 
@@ -69,7 +70,6 @@ function startAutoSlide() {
 function stopAutoSlide() {
   clearInterval(autoSlideInterval);
 }
-
 // Initialize all event listeners for the slider
 function initEventListeners() {
   // Debounce resize event to prevent excessive updates
