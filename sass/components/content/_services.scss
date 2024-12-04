@@ -1,0 +1,50 @@
+// Service Cards ================================================
+
+.service-card {
+    cursor: pointer;
+    background-color: #F3F7FA;
+    text-align: center;
+    margin: 1rem;
+    padding: 3rem;
+}
+
+.service-card h3 {
+    margin: 0 auto;
+    width: 10rem;
+}
+
+.service-card img {
+    width: 10rem;
+}
+
+@media(min-width: 56.25rem) {
+    .service-header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .service-card {
+        width: 29%;
+    }
+}
+
+// Service Details ================================================
+
+.single-service-detail {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease;
+    background-color: #F3F7FA;
+    padding: 0 4rem;
+}
+
+.single-service-detail .pricing-tag {
+    font-size: 3rem;
+    margin: 1rem 0;
+}
+
+.single-service-detail.accordion-active {
+    max-height: 50rem;
+    transition: max-height 0.5s ease;
+}

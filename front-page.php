@@ -49,7 +49,7 @@ get_header();
 								<?php
 								while( have_rows( 'pricing_type' ) ) : the_row(); ?>
 									<section class="service-card">
-										<?php echo get_sub_field( 'pricing_title' ); ?>
+										<h3><?php echo get_sub_field( 'pricing_title' ); ?></h3>
 										<?php 
 										$image = get_sub_field( 'pricing_icon' ); 
 										echo wp_get_attachment_image( $image, array( '50', '50' ), "", array( 'class' => "pricing-icon header", ) );
@@ -61,13 +61,16 @@ get_header();
 							<div class="service-detail">
 								<?php
 								while( have_rows( 'pricing_type') ) : the_row(); ?>
-									<p class="pricing-tag"><?php echo get_sub_field( 'pricing_tag' ); ?></p>
-									<p class="suitable-for"><?php echo get_sub_field( 'suitable_for' ); ?></p>
-									<p class="details"><?php echo get_sub_field( 'details' ); ?></p>
-									<?php 
-									$image = get_sub_field( 'pricing_icon' ); 
-									echo wp_get_attachment_image( $image, array( '50', '50' ), "", array( 'class' => "pricing-icon detail", ) ); 
-									?>			
+									<article class="single-service-detail">
+										<h4><?php echo get_sub_field( 'pricing_title' ); ?></h4>
+										<p class="pricing-tag"><?php echo get_sub_field( 'pricing_tag' ); ?></p>
+										<p class="suitable-for"><?php echo get_sub_field( 'suitable_for' ); ?></p>
+										<p class="details"><?php echo get_sub_field( 'details' ); ?></p>
+										<?php 
+										$image = get_sub_field( 'pricing_icon' ); 
+										echo wp_get_attachment_image( $image, array( '50', '50' ), "", array( 'class' => "pricing-icon detail", ) ); 
+										?>
+									</article>
 								<?php
 								endwhile; ?>
 							</div>

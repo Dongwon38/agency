@@ -146,6 +146,10 @@ function whitespace_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	if ( is_front_page() ) {
+		wp_enqueue_script('whitespace-services-accordion', get_template_directory_uri() . '/js/services-accordion.js', array(), _S_VERSION);
+	}
 	
 	// Add custom testimonial JS
 	wp_enqueue_script( 'custom-testimonial', get_template_directory_uri() . '/js/custom-testimonial.js', array(), _S_VERSION, true );
