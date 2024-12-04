@@ -2,27 +2,24 @@
   display: block;
 }
 
-.post,
-.page {
-  margin: 0 0 1.5em;
-}
-
 .updated:not(.published) {
   display: none;
 }
 
-.page-content,
-.entry-content,
-.entry-summary {
-  margin: 1.5em 0 0;
+.post,
+.page {
+  padding: 0;
+  margin: 0;
 }
 
-.page-links {
-  clear: both;
-  margin: 0 0 1.5em;
+// custom layout for pages
+div.site {
+  max-width: $max-width;
+  margin: auto;
 }
 
-// Temporary code to fix Carousel width overflow issue
-#primary > section.work-section > div {
-  overflow: hidden;
+.site-main > section {
+  margin-top: 3rem;
+  padding-left: 16px;
+  padding-right: 16px;
 }
