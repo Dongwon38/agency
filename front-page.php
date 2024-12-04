@@ -18,23 +18,86 @@ get_header();
 	<main id="primary" class="site-main">
 
 		<?php
-		while ( have_posts() ) :
-			the_post();
+		while ( have_posts() ) : the_post(); ?>
+			<section class="hero-section">
+				<?php
+				if ( have_rows( 'hero_section' ) ) :
+					while ( have_rows( 'hero_section' ) ) : the_row(); ?>
+						
+						<h2 class="tagline"><?php echo get_sub_field( 'tagline' ); ?></h2>
+						<p class="description"><?php echo get_sub_field( 'description' ); ?></p>	
 
-			get_template_part( 'template-parts/content', 'page' );
+						<?php 
+						$image = get_sub_field('image');
+						echo wp_get_attachment_image( $image, 'full', "", array( 'class' => "hero-image", ) ); 
+						?>
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+					<?php
+					endwhile;
+				endif; ?>
+			</section>
 
+			<section class="service-section">
+				<h2>Our Services</h2>
+				<?php 
+				if ( have_rows( 'service_section' ) ) : 
+					while ( have_rows( 'service_section' ) ) : the_row(); ?>
+						<p><?php echo get_sub_field( 'description' ); ?></p>
+						<?php 
+						if ( have_rows( 'pricing_type' ) ) : ?>
+							<div class="service-header">
+								<?php
+								while( have_rows( 'pricing_type' ) ) : the_row(); ?>
+									<section class="service-card">
+										<?php echo get_sub_field( 'pricing_title' ); ?>
+										<?php 
+										$image = get_sub_field( 'pricing_icon' ); 
+										echo wp_get_attachment_image( $image, array( '50', '50' ), "", array( 'class' => "pricing-icon header", ) );
+										?>
+									</section>
+								<?php
+								endwhile; ?>
+							</div>
+							<div class="service-detail">
+								<?php
+								while( have_rows( 'pricing_type') ) : the_row(); ?>
+									<p class="pricing-tag"><?php echo get_sub_field( 'pricing_tag' ); ?></p>
+									<p class="suitable-for"><?php echo get_sub_field( 'suitable_for' ); ?></p>
+									<p class="details"><?php echo get_sub_field( 'details' ); ?></p>
+									<?php 
+									$image = get_sub_field( 'pricing_icon' ); 
+									echo wp_get_attachment_image( $image, array( '50', '50' ), "", array( 'class' => "pricing-icon detail", ) ); 
+									?>			
+								<?php
+								endwhile; ?>
+							</div>
+						<?php
+						endif;
+					endwhile;
+				endif;
+				?>
+			</section>
+
+			<section class="work-section">
+				<h2>Our Work</h2>	
+				<?php echo do_shortcode( '[carousel_slide id="131"]' ); ?>
+
+			</section>
+
+			<section class="testimonial-section">
+				<h2>Testimonials</h2>
+				<?php require get_template_directory() . '/inc/custom-testimonial.php'; ?>
+			</section>
+
+			<section class="contact-section">
+				<h2>Let's Work Together</h2>
+				<?php echo do_shortcode( '[wpforms id="34"]	' ); ?>
+			</section>
+
+		<?php
 		endwhile; // End of the loop.
 		?>
 
 </main><!-- #main -->
-
-<h2>Testimonials</h2>
 <?php
-require get_template_directory() . '/inc/custom-testimonial.php';
-get_sidebar();
 get_footer();
