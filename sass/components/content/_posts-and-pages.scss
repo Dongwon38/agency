@@ -2,27 +2,25 @@
   display: block;
 }
 
-.post,
-.page {
-  margin: 0 0 1.5em;
-}
-
 .updated:not(.published) {
   display: none;
 }
 
-.page-content,
-.entry-content,
-.entry-summary {
-  margin: 1.5em 0 0;
-}
-
-.page-links {
-  clear: both;
-  margin: 0 0 1.5em;
+.post,
+.page {
+  padding: 0;
+  margin: 0;
 }
 
 // Temporary code to fix Carousel width overflow issue
-#primary > section.work-section > div {
-  overflow: hidden;
+.work-section .carousel-slider-outer {
+  overflow: hidden !important;
+}
+
+// custom layout for pages
+div.site {
+  padding-left: 16px;
+  padding-right: 16px;
+  max-width: $max-width;
+  margin: auto;
 }

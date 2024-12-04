@@ -19,7 +19,7 @@ get_header();
 
 		<?php
 		while ( have_posts() ) : the_post(); ?>
-			<section class="hero-section">
+			<section class="hero-section" id="hero-section">
 				<?php
 				if ( have_rows( 'hero_section' ) ) :
 					while ( have_rows( 'hero_section' ) ) : the_row(); ?>
@@ -37,7 +37,7 @@ get_header();
 				endif; ?>
 			</section>
 
-			<section class="service-section">
+			<section class="service-section" id="service-section">
 				<h2>Our Services</h2>
 				<?php 
 				if ( have_rows( 'service_section' ) ) : 
@@ -78,20 +78,20 @@ get_header();
 				?>
 			</section>
 
-			<section class="work-section">
+			<section class="work-section" id="work-section">
 				<h2>Our Work</h2>	
 				<?php echo do_shortcode( '[carousel_slide id="131"]' ); ?>
 
 			</section>
 
-			<section class="testimonial-section">
+			<section class="testimonial-section" id="testimonial-section">
 				<h2>Testimonials</h2>
 				<?php require get_template_directory() . '/inc/custom-testimonial.php'; ?>
 			</section>
 
-			<section class="contact-section">
+			<section class="contact-section" id="contact-section">
 				<h2>Let's Work Together</h2>
-				<?php echo do_shortcode( '[wpforms id="34"]	' ); ?>
+				<?php echo do_shortcode( '[wpforms id="34"]' ); ?>
 			</section>
 
 		<?php
