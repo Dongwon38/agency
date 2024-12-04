@@ -38,11 +38,11 @@ get_header();
 			</section>
 
 			<section class="service-section" id="service-section">
-				<h2>Our Services</h2>
+				<h2><?php echo esc_html("Our Services"); ?></h2>
 				<?php 
 				if ( have_rows( 'service_section' ) ) : 
 					while ( have_rows( 'service_section' ) ) : the_row(); ?>
-						<p><?php echo get_sub_field( 'description' ); ?></p>
+						<p class="service-description"><?php echo get_sub_field( 'description' ); ?></p>
 						<?php 
 						if ( have_rows( 'pricing_type' ) ) : ?>
 							<div class="service-header">
@@ -64,8 +64,9 @@ get_header();
 									<article class="single-service-detail">
 										<h4><?php echo get_sub_field( 'pricing_title' ); ?></h4>
 										<p class="pricing-tag"><?php echo get_sub_field( 'pricing_tag' ); ?></p>
-										<p class="suitable-for"><?php echo get_sub_field( 'suitable_for' ); ?></p>
+										<p class="suitable-for"><?php echo esc_html('Suitable For: '); echo get_sub_field( 'suitable_for' ); ?></p>
 										<p class="details"><?php echo get_sub_field( 'details' ); ?></p>
+										<a href="#contact-form" class="contact-button"><?php echo esc_html("Contact Us"); ?></a>
 										<?php 
 										$image = get_sub_field( 'pricing_icon' ); 
 										echo wp_get_attachment_image( $image, array( '50', '50' ), "", array( 'class' => "pricing-icon detail", ) ); 
@@ -94,7 +95,7 @@ get_header();
 
 			<section class="contact-section" id="contact-section">
 				<div class="left-column">
-				<h2>Let's Work Together</h2>
+				<h2 id="contact-form">Let's Work Together</h2>
 				<?php 
 				if ( have_rows( 'contact_section' ) ) :
 					while ( have_rows( 'contact_section' ) ) : the_row(); ?>

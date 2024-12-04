@@ -1,20 +1,43 @@
+// Service Hero ================================================
+
+.service-section {
+    padding: 0 !important;
+}
+
+.service-section h2 {
+    padding: 1rem;
+    max-width: 50rem;
+    margin: 0 auto;
+    margin-top: 3rem;
+}
+
+.service-description {
+    padding: 1rem;
+    max-width: 50rem;
+    margin: 0rem auto;
+    margin-bottom: 3rem;
+}
+
 // Service Cards ================================================
+
+.service-header {
+    border-bottom: 2px solid #fff;
+}
 
 .service-card {
     cursor: pointer;
     background-color: #F3F7FA;
-    text-align: center;
-    margin: 1rem;
-    padding: 3rem;
+    padding: 0.5rem;
 }
 
 .service-card h3 {
-    margin: 0 auto;
-    width: 10rem;
+    font-size: 0.9rem;
+    margin: 0.5rem;
 }
 
-.service-card img {
+.pricing-icon {
     width: 10rem;
+    display: none;
 }
 
 @media(min-width: 56.25rem) {
@@ -25,7 +48,21 @@
     }
 
     .service-card {
-        width: 29%;
+        margin: 1rem;
+        padding: 3rem;
+        width: 30%;
+        text-align: center;
+    }
+    
+    .service-card h3 {
+        margin: 0 auto;
+        width: 10rem;
+        font-size: 1.3rem;
+    }
+
+    .service-card img {
+        display: inline;
+        justify-content: center;
     }
 }
 
@@ -34,9 +71,24 @@
 .single-service-detail {
     overflow: hidden;
     max-height: 0;
-    transition: max-height 0.3s ease;
+    transition: max-height 0.3s ease-in-out;
     background-color: #F3F7FA;
-    padding: 0 4rem;
+    padding: 0 2rem;
+    position: relative;
+}
+
+.single-service-detail h4 {
+    font-size: 1.2rem;
+    margin-top: 4rem;
+}
+
+.single-service-detail .details {
+    margin-bottom: 2.5rem;
+    max-width: 45rem;
+}
+
+.single-service-detail .suitable-for {
+    max-width: 45rem;
 }
 
 .single-service-detail .pricing-tag {
@@ -46,5 +98,34 @@
 
 .single-service-detail.accordion-active {
     max-height: 50rem;
-    transition: max-height 0.5s ease;
+    transition: max-height 0.3s ease-in-out;
+}
+
+.contact-button {
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border: 1px solid #fff;
+    border-radius: 1rem;
+    background-color: #fff;
+    color: black;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    margin-bottom: 4rem;
+}
+
+.contact-button:visited, .contact-button:hover, .contact-button:active, .contact-button:focus {
+    color: black;
+}
+
+@media(min-width: 56.25rem) {
+    .single-service-detail .pricing-icon {
+        display: block;
+        position: absolute;
+        z-index: 2;
+        top: -2rem;
+        right: -5rem;
+        width: 20rem;
+        opacity: 20%;
+    }
 }
