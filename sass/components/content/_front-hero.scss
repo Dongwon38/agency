@@ -1,0 +1,24 @@
+.home .hero-section {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  height: 600px;
+}
+
+.home .hero-section .hero-image {
+  position: absolute;
+  top: 0;
+  display: block;
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.home .hero-section .tagline {
+  margin: 0;
+  padding: 64px 16px 16px 16px;
+}
+.home .hero-section .description {
+  padding: 16px;
+}

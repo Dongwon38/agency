@@ -90,8 +90,33 @@ get_header();
 			</section>
 
 			<section class="contact-section" id="contact-section">
+				<div class="left-column">
 				<h2>Let's Work Together</h2>
-				<?php echo do_shortcode( '[wpforms id="34"]' ); ?>
+				<?php 
+				if ( have_rows( 'contact_section' ) ) :
+					while ( have_rows( 'contact_section' ) ) : the_row(); ?>
+
+						<p class="description 1"><?php echo get_sub_field( 'description-1' ); ?></p>
+						<p class="description 2"><?php echo get_sub_field( 'description-2' ); ?></p>
+						<span class="contant-email">
+							<?php
+							$image = get_sub_field( 'email_logo' );
+							echo wp_get_attachment_image( $image, array( '32', '32' ), "", array( 'class' => "email-logo" ) );
+							?>
+							<?php 
+							$email = get_sub_field( 'email' ); ?>
+							<a href="mailto:<?php echo $email ?>"><?php echo $email ?></a>
+						</span>
+
+					
+					<?php
+					endwhile;
+				endif;
+				?>
+				</div>
+				<div class="right-column">
+					<?php echo do_shortcode( '[wpforms id="34"]' ); ?>
+				</div>
 			</section>
 
 		<?php

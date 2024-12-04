@@ -12,15 +12,14 @@
   margin: 0;
 }
 
-// Temporary code to fix Carousel width overflow issue
-.work-section .carousel-slider-outer {
-  overflow: hidden !important;
-}
-
 // custom layout for pages
 div.site {
-  padding-left: 16px;
-  padding-right: 16px;
   max-width: $max-width;
   margin: auto;
+}
+
+.site-main > section {
+  margin-top: 3rem;
+  padding-left: 16px;
+  padding-right: 16px;
 }
