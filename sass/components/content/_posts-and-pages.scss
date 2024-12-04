@@ -23,7 +23,6 @@
 }
 
 // Temporary code to fix Carousel width overflow issue
-
-#post-6 > div > section:nth-child(7) > div > div {
+#primary > section.work-section > div {
   overflow: hidden;
 }
