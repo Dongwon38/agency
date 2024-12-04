@@ -43,7 +43,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="comment"><?php echo esc_html($excerpt); ?></div>
+                    <div class="comment"><p><?php echo esc_html($excerpt); ?></p></div>
                 </div>
                 <?php
             endwhile;

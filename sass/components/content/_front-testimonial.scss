@@ -19,12 +19,12 @@
 }
 
 .ws-testimonial-section .prev {
-  top: 44px;
+  top: 62px;
   left: -10px;
 }
 
 .ws-testimonial-section .next {
-  top: 44px;
+  top: 62px;
   right: -10px;
 }
 
@@ -34,8 +34,8 @@
   display: block;
   overflow: hidden;
   position: relative;
-  width: 100%;
-  max-width: 1100px;
+  width: 95%;
+  max-width: 1180px;
   margin: auto;
 }
 
@@ -84,17 +84,22 @@
 
 .ws-testimonial-section .comment {
   font-size: 20px;
-  font-weight: 900;
+  font-weight: 600;
   height: 100%;
-  margin: 2rem 4rem;
+  margin: 2rem 1rem;
   opacity: 1;
   visibility: visible;
+  color: black;
+  p {
+    margin: 0;
+  }
 }
 
 @media (min-width: 1200px) {
   .ws-testimonial-section .comment {
     opacity: 0;
     visibility: hidden;
+    margin: 2rem 2rem;
   }
 }
 
@@ -108,7 +113,7 @@
 .ws-testimonial-section .bio-innerbox {
   display: flex;
   width: 100%;
-  padding: 16px 32px;
+  padding: 32px 32px;
   max-width: 320px;
 }
 
