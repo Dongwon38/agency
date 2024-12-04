@@ -32,7 +32,6 @@
                 ?>
                 
                 <div class="testimonial">
-                    <div class="comment"><?php echo esc_html($excerpt); ?></div>
                     <div class="bio">
                         <div class="bio-innerbox">
                             <?php if ($photo_url) : ?>
@@ -44,6 +43,7 @@
                             </div>
                         </div>
                     </div>
+                    <div class="comment"><?php echo esc_html($excerpt); ?></div>
                 </div>
                 <?php
             endwhile;
