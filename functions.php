@@ -153,7 +153,9 @@ function whitespace_scripts() {
 	
 	// Add custom testimonial JS
 	wp_enqueue_script( 'custom-testimonial', get_template_directory_uri() . '/js/custom-testimonial.js', array(), _S_VERSION, true );
-	
+
+	// header animaition JS
+	wp_enqueue_script ( 'custom-header', get_template_directory_uri() . '/js/custom-header.js', array(), _S_VERSION, true );
 	
 }
 add_action( 'wp_enqueue_scripts', 'whitespace_scripts' );
