@@ -110,11 +110,26 @@
 // applied a plugin for mobile screen
 
 @media (min-width: $breakpoint-tablet-sm) {
+  .site-header {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    z-index: 2;
+    background-color: transparent;
+    transition: background-color 0.5s ease;
+  }
+
+  .scroll-activated {
+    background-color: whitesmoke;
+  }
+
   .site-header .content-part {
     display: flex;
     justify-content: space-between;
     padding: 0 16px;
-    margin: auto;
+    width: 100%;
     max-width: $max-width;
   }
 
@@ -128,6 +143,17 @@
 
   .site-header .site-branding .custom-logo {
     display: block;
+  }
+
+  .site-header .site-branding .custom-logo-text {
+    // temp style
+    display: flex;
+    font-size: 24px;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding-left: 20px;
+    width: 300px;
+    margin: 0;
   }
 
   .site-header .main-navigation {
