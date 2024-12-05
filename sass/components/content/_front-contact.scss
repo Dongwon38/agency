@@ -25,7 +25,7 @@
 }
 
 @media (min-width: $breakpoint-tablet-sm) {
-  .home .contact-section {
+  .home .contact-section .content-part {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4px;

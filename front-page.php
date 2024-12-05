@@ -23,103 +23,120 @@ get_header();
 				<?php
 				if ( have_rows( 'hero_section' ) ) :
 					while ( have_rows( 'hero_section' ) ) : the_row(); ?>
-						
-						<h2 class="tagline"><?php echo get_sub_field( 'tagline' ); ?></h2>
-						<p class="description"><?php echo get_sub_field( 'description' ); ?></p>	
-
-						<?php 
-						$image = get_sub_field('image');
-						echo wp_get_attachment_image( $image, 'full', "", array( 'class' => "hero-image", ) ); 
-						?>
-
+						<div class="content-part">
+							<h2 class="tagline"><?php echo get_sub_field( 'tagline' ); ?></h2>
+							<p class="description"><?php echo get_sub_field( 'description' ); ?></p>	
+						</div>
+						<div class="background-part">
+							<?php 
+							$image = get_sub_field('image');
+							echo wp_get_attachment_image( $image, 'full', "", array( 'class' => "hero-image", ) ); 
+							?>
+						</div>
 					<?php
 					endwhile;
 				endif; ?>
 			</section>
 
 			<section class="service-section" id="service-section">
-				<h2><?php echo esc_html("Our Services"); ?></h2>
-				<?php 
-				if ( have_rows( 'service_section' ) ) : 
-					while ( have_rows( 'service_section' ) ) : the_row(); ?>
-						<p class="service-description"><?php echo get_sub_field( 'description' ); ?></p>
-						<?php 
-						if ( have_rows( 'pricing_type' ) ) : ?>
-							<div class="service-header">
-								<?php
-								while( have_rows( 'pricing_type' ) ) : the_row(); ?>
-									<section class="service-card">
-										<h3><?php echo get_sub_field( 'pricing_title' ); ?></h3>
-										<?php 
-										$image = get_sub_field( 'pricing_icon' ); 
-										echo wp_get_attachment_image( $image, array( '50', '50' ), "", array( 'class' => "pricing-icon header", ) );
-										?>
-									</section>
-								<?php
-								endwhile; ?>
-							</div>
-							<div class="service-detail">
-								<?php
-								while( have_rows( 'pricing_type') ) : the_row(); ?>
-									<article class="single-service-detail">
-										<h4><?php echo get_sub_field( 'pricing_title' ); ?></h4>
-										<p class="pricing-tag"><?php echo get_sub_field( 'pricing_tag' ); ?></p>
-										<p class="suitable-for"><?php echo esc_html('Suitable For: '); echo get_sub_field( 'suitable_for' ); ?></p>
-										<p class="details"><?php echo get_sub_field( 'details' ); ?></p>
-										<a href="#contact-form" class="contact-button"><?php echo esc_html("Contact Us"); ?></a>
-										<?php 
-										$image = get_sub_field( 'pricing_icon' ); 
-										echo wp_get_attachment_image( $image, array( '50', '50' ), "", array( 'class' => "pricing-icon detail", ) ); 
-										?>
-									</article>
-								<?php
-								endwhile; ?>
-							</div>
-						<?php
-						endif;
-					endwhile;
-				endif;
-				?>
+				<div class="content-part">
+					<h2><?php echo esc_html("Our Services"); ?></h2>
+					<?php 
+					if ( have_rows( 'service_section' ) ) : 
+						while ( have_rows( 'service_section' ) ) : the_row(); ?>
+							<p class="service-description"><?php echo get_sub_field( 'description' ); ?></p>
+							<?php 
+							if ( have_rows( 'pricing_type' ) ) : ?>
+								<div class="service-header">
+									<?php
+									while( have_rows( 'pricing_type' ) ) : the_row(); ?>
+										<section class="service-card">
+											<h3><?php echo get_sub_field( 'pricing_title' ); ?></h3>
+											<?php 
+											$image = get_sub_field( 'pricing_icon' ); 
+											echo wp_get_attachment_image( $image, array( '50', '50' ), "", array( 'class' => "pricing-icon header", ) );
+											?>
+										</section>
+									<?php
+									endwhile; ?>
+								</div>
+								<div class="service-detail">
+									<?php
+									while( have_rows( 'pricing_type') ) : the_row(); ?>
+										<article class="single-service-detail">
+											<h4><?php echo get_sub_field( 'pricing_title' ); ?></h4>
+											<p class="pricing-tag"><?php echo get_sub_field( 'pricing_tag' ); ?></p>
+											<p class="suitable-for"><?php echo esc_html('Suitable For: '); echo get_sub_field( 'suitable_for' ); ?></p>
+											<p class="details"><?php echo get_sub_field( 'details' ); ?></p>
+											<a href="#contact-form" class="contact-button"><?php echo esc_html("Contact Us"); ?></a>
+											<?php 
+											$image = get_sub_field( 'pricing_icon' ); 
+											echo wp_get_attachment_image( $image, array( '50', '50' ), "", array( 'class' => "pricing-icon detail", ) ); 
+											?>
+										</article>
+									<?php
+									endwhile; ?>
+								</div>
+							<?php
+							endif;
+						endwhile;
+					endif;
+					?>
+				</div>
+				<div class="background-part">
+
+				</div>
 			</section>
 
 			<section class="work-section" id="work-section">
-				<h2>Our Work</h2>	
-				<?php echo do_shortcode( '[carousel_slide id="131"]' ); ?>
+				<div class="content-part">
+					<h2>Our Work</h2>	
+					<?php echo do_shortcode( '[carousel_slide id="131"]' ); ?>
+				</div>
+				<div class="background-part">
 
+				</div>
 			</section>
 
 			<section class="testimonial-section" id="testimonial-section">
-				<h2>Testimonials</h2>
-				<?php require get_template_directory() . '/inc/custom-testimonial.php'; ?>
+				<div class="content-part">
+					<h2>Testimonials</h2>
+					<?php require get_template_directory() . '/inc/custom-testimonial.php'; ?>
+				</div>
+				<div class="background-part">
+
+				</div>
 			</section>
 
 			<section class="contact-section" id="contact-section">
-				<div class="left-column">
-				<h2 id="contact-form">Let's Work Together</h2>
-				<?php 
-				if ( have_rows( 'contact_section' ) ) :
-					while ( have_rows( 'contact_section' ) ) : the_row(); ?>
-
-						<p class="description 1"><?php echo get_sub_field( 'description-1' ); ?></p>
-						<p class="description 2"><?php echo get_sub_field( 'description-2' ); ?></p>
-						<span class="contant-email">
-							<?php
-							$image = get_sub_field( 'email_logo' );
-							echo wp_get_attachment_image( $image, array( '32', '32' ), "", array( 'class' => "email-logo" ) );
-							?>
-							<?php 
-							$email = get_sub_field( 'email' ); ?>
-							<a href="mailto:<?php echo $email ?>"><?php echo $email ?></a>
-						</span>
-
-					
-					<?php
-					endwhile;
-				endif;
-				?>
+				<div class="content-part">
+					<div class="left-column">
+					<h2 id="contact-form">Let's Work Together</h2>
+					<?php 
+					if ( have_rows( 'contact_section' ) ) :
+						while ( have_rows( 'contact_section' ) ) : the_row(); ?>
+							<p class="description 1"><?php echo get_sub_field( 'description-1' ); ?></p>
+							<p class="description 2"><?php echo get_sub_field( 'description-2' ); ?></p>
+							<span class="contant-email">
+								<?php
+								$image = get_sub_field( 'email_logo' );
+								echo wp_get_attachment_image( $image, array( '32', '32' ), "", array( 'class' => "email-logo" ) );
+								?>
+								<?php 
+								$email = get_sub_field( 'email' ); ?>
+								<a href="mailto:<?php echo $email ?>"><?php echo $email ?></a>
+							</span>
+						<?php
+						endwhile;
+					endif;
+					?>
+					</div>
+					<div class="right-column">
+						<?php echo do_shortcode( '[wpforms id="34"]' ); ?>
+					</div>
 				</div>
-				<div class="right-column">
-					<?php echo do_shortcode( '[wpforms id="34"]' ); ?>
+				<div class="background-part">
+
 				</div>
 			</section>
 

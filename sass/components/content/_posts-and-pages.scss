@@ -14,8 +14,15 @@
 
 // custom layout for pages
 .site-main {
+}
+
+.site-main .content-part {
   max-width: $max-width;
   margin: auto;
+}
+
+.site-main .background-part {
+  width: 100%;
 }
 
 .site-main > section {
