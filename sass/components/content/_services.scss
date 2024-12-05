@@ -1,4 +1,7 @@
 // Service Hero ================================================
+.html {
+    scroll-behavior: smooth;
+}
 
 .service-section {
     padding: 0 !important;
@@ -27,7 +30,16 @@
 .service-card {
     cursor: pointer;
     background-color: #F3F7FA;
+    transition: background-color 0.2s ease-in-out;
     padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.service-card:hover, .service-card:focus {
+    background-color: #b4cde0;
+    transition: background-color 0.2s ease-in-out;
 }
 
 .service-card h3 {
@@ -35,9 +47,16 @@
     margin: 0.5rem;
 }
 
-.pricing-icon {
-    width: 10rem;
-    display: none;
+.service-card .pricing-icon {
+    width: 2rem;
+    margin: 0.5rem;
+    opacity: 70%;
+}
+
+@media(min-width: 25rem) {
+    .service-card .pricing-icon {
+        margin-right: 2rem;
+    }
 }
 
 @media(min-width: 56.25rem) {
@@ -50,14 +69,21 @@
     .service-card {
         margin: 1rem;
         padding: 3rem;
-        width: 30%;
+        width: 29%;
         text-align: center;
+        flex-direction: column;
     }
     
     .service-card h3 {
         margin: 0 auto;
         width: 10rem;
         font-size: 1.3rem;
+    }
+
+    .service-card .pricing-icon {
+        width: 8rem;
+        margin: 1rem;
+        opacity: 70%;
     }
 
     .service-card img {
@@ -75,6 +101,10 @@
     background-color: #F3F7FA;
     padding: 0 2rem;
     position: relative;
+}
+
+.single-service-detail .pricing-icon {
+    display: none;
 }
 
 .single-service-detail h4 {
@@ -112,10 +142,16 @@
     align-items: center;
     width: fit-content;
     margin-bottom: 4rem;
+    transition: background-color 0.2s ease-in-out;
 }
 
-.contact-button:visited, .contact-button:hover, .contact-button:active, .contact-button:focus {
+.contact-button:visited {
     color: black;
+}
+
+.contact-button:hover, .contact-button:focus {
+    background-color: #b4cde0;
+    transition: background-color 0.2s ease-in-out;
 }
 
 @media(min-width: 56.25rem) {
@@ -123,7 +159,7 @@
         display: block;
         position: absolute;
         z-index: 2;
-        top: -2rem;
+        top: 0rem;
         right: -5rem;
         width: 20rem;
         opacity: 20%;
