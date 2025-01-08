@@ -1,4 +1,7 @@
 // Temporary code to fix Carousel width overflow issue
-.work-section .carousel-slider-outer {
-  overflow: hidden !important;
+.work-section  {
+  .carousel-slider-outer{
+    overflow: hidden !important;
+    
+  }
 }
