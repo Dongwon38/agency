@@ -29,8 +29,10 @@ get_header();
 						</div>
 						<div class="background-part">
 							<?php 
-							$image = get_sub_field('image');
-							echo wp_get_attachment_image( $image, 'full', "", array( 'class' => "hero-image", ) ); 
+							$herobg = get_sub_field('image-bg');
+							$heroitem = get_sub_field('image-item');
+							echo wp_get_attachment_image( $herobg, 'full', "", array( 'class' => "hero-image bg", ) ); 
+							echo wp_get_attachment_image( $heroitem, 'full', "", array( 'class' => "hero-image item", ) ); 
 							?>
 						</div>
 					<?php
