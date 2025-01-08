@@ -156,6 +156,10 @@ function whitespace_scripts() {
 
 	// header animaition JS
 	wp_enqueue_script ( 'custom-header', get_template_directory_uri() . '/js/custom-header.js', array(), _S_VERSION, true );
+
+	// Enqueue Google Fonts ('Inter and Bebas Neue')
+	wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap', [], null);
+
 	
 }
 add_action( 'wp_enqueue_scripts', 'whitespace_scripts' );
