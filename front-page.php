@@ -24,16 +24,20 @@ get_header();
 				if ( have_rows( 'hero_section' ) ) :
 					while ( have_rows( 'hero_section' ) ) : the_row(); ?>
 						<div class="content-part">
-							<h2 class="tagline"><?php echo get_sub_field( 'tagline' ); ?></h2>
-							<p class="description"><?php echo get_sub_field( 'description' ); ?></p>	
+							<h2 class="tagline">We Craft <br /> Clean, Impactful <br />Web Experiences</h2>
+							<p class="description">Dedicated to designing minimalist and effective digital solutions.</p>	
 						</div>
 						<div class="background-part">
 							<?php 
 							$herobg = get_sub_field('image-bg');
-							$heroitem = get_sub_field('image-item');
 							echo wp_get_attachment_image( $herobg, 'full', "", array( 'class' => "hero-image bg", ) ); 
-							echo wp_get_attachment_image( $heroitem, 'full', "", array( 'class' => "hero-image item", ) ); 
 							?>
+							<div class="background-item-wrapper">
+								<?php
+								$heroitem = get_sub_field('image-item');
+								echo wp_get_attachment_image( $heroitem, 'full', "", array( 'class' => "hero-image item", ) ); 
+								?>
+							</div>
 						</div>
 					<?php
 					endwhile;
