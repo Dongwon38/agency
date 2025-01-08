@@ -107,8 +107,16 @@
 
 // whitespace header & navigation
 
-// applied a plugin for mobile screen
+// applied a plugin for mobile screen + custom style below
+.mob-menu-header-holder {
+  background: transparent !important;
+}
 
+body.mob-menu-slideout-over {
+  padding-top: 0 !important;
+}
+
+// tablet & desktop
 @media (min-width: $breakpoint-tablet-sm) {
   .site-header {
     display: flex;
@@ -154,6 +162,7 @@
     padding-left: 20px;
     width: 300px;
     margin: 0;
+    color: white;
   }
 
   .site-header .main-navigation {
@@ -167,6 +176,6 @@
   }
   .site-header .main-navigation a {
     padding: 16px;
-    color: black;
+    color: white;
   }
 }

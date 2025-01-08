@@ -2,14 +2,18 @@
   padding: 0 16px;
 }
 
-.home .contact-section .wpforms-submit-container {
+.home
+  .contact-section
+  .content-part
+  .home
+  .contact-section
+  .wpforms-submit-container {
   display: flex;
   justify-content: center;
 }
 
 .home .contact-section .description {
   font-size: 16px;
-  max-width: 340px;
 }
 
 .home .contact-section .contant-email {
@@ -28,11 +32,16 @@
   .home .contact-section .content-part {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4px;
+    gap: 24px;
+    padding: 0 4rem;
   }
 
   .home .contact-section .left-column {
     position: relative;
+  }
+
+  .home .contact-section .description {
+    max-width: 400px;
   }
 
   .home .contact-section .contant-email {

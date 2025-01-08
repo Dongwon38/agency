@@ -25,7 +25,7 @@ get_header();
 					while ( have_rows( 'hero_section' ) ) : the_row(); ?>
 						<div class="content-part">
 							<h2 class="tagline"><?php echo get_sub_field( 'tagline' ); ?></h2>
-							<p class="description"><?php echo get_sub_field( 'description' ); ?></p>	
+							<p class="description"><?php echo get_sub_field( 'description' ); ?></p>
 						</div>
 						<div class="background-part">
 							<?php 

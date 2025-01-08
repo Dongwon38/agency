@@ -13,7 +13,7 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
-			<a href="<?php echo get_home_url(); ?>" class="footer-site-logo">Whitespace Studio</a>
+			<a href="<?php echo get_home_url(); ?>" class="footer-site-logo">WHITESPACE STUDIO</a>
 			<div class="legal-stuff">
 				<ul>
 					<li><p class="copyright">Copyright &copy; <?php echo date('Y'); ?> Whitespace Studio</p></li>

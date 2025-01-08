@@ -5,20 +5,41 @@
   height: 600px;
 }
 
+.home .hero-section .content-part {
+  @media (min-width: 400px) {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
+
+.home .hero-section .tagline {
+  margin: 0;
+  padding: 210px 16px 0 16px;
+  font-family: "playfair";
+  line-height: 1;
+  font-style: italic;
+  font-weight: 400;
+  max-width: 320px;
+  color: white;
+  font-size: 65px;
+  @media (min-width: 500px) {
+    font-size: 80px;
+  }
+}
+.home .hero-section .description {
+  padding: 0 16px;
+  margin: 0;
+  font-weight: 200;
+  color: white;
+}
+
 .home .hero-section .hero-image {
   position: absolute;
   top: 0;
   display: block;
   width: auto;
-  height: 100%;
+  height: 100vh;
   object-fit: cover;
+  filter: brightness(0.5);
   z-index: -1;
-}
-
-.home .hero-section .tagline {
-  margin: 0;
-  padding: 64px 16px 16px 16px;
-}
-.home .hero-section .description {
-  padding: 16px;
 }
