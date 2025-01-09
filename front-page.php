@@ -24,14 +24,20 @@ get_header();
 				if ( have_rows( 'hero_section' ) ) :
 					while ( have_rows( 'hero_section' ) ) : the_row(); ?>
 						<div class="content-part">
-							<h2 class="tagline"><?php echo get_sub_field( 'tagline' ); ?></h2>
-							<p class="description"><?php echo get_sub_field( 'description' ); ?></p>	
+							<h2 class="tagline">We Craft <br /> Clean, Impactful <br />Web Experiences</h2>
+							<p class="description">Dedicated to designing minimalist and effective digital solutions.</p>	
 						</div>
 						<div class="background-part">
 							<?php 
-							$image = get_sub_field('image');
-							echo wp_get_attachment_image( $image, 'full', "", array( 'class' => "hero-image", ) ); 
+							$herobg = get_sub_field('image-bg');
+							echo wp_get_attachment_image( $herobg, 'full', "", array( 'class' => "hero-image bg", ) ); 
 							?>
+							<div class="background-item-wrapper">
+								<?php
+								$heroitem = get_sub_field('image-item');
+								echo wp_get_attachment_image( $heroitem, 'full', "", array( 'class' => "hero-image item", ) ); 
+								?>
+							</div>
 						</div>
 					<?php
 					endwhile;
@@ -111,7 +117,7 @@ get_header();
 			<section class="contact-section" id="contact-section">
 				<div class="content-part">
 					<div class="left-column">
-					<h2 id="contact-form">Let's Work Together</h2>
+					<h2 id="contact-form">Contact Us</h2>
 					<?php 
 					if ( have_rows( 'contact_section' ) ) :
 						while ( have_rows( 'contact_section' ) ) : the_row(); ?>
