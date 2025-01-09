@@ -1,4 +1,26 @@
-// Temporary code to fix Carousel width overflow issue
-.work-section .carousel-slider-outer {
-  overflow: hidden !important;
+.work-section  {
+  .slider-container{
+    .slide{
+      .slide-content{
+        a{
+          text-decoration: none !important;
+          .slide-title{
+            font-size: 1.1rem;
+            font-weight: 400;
+          }
+          &:active, &:visited{
+            color: black;
+          }
+          &:hover{
+            color: rgb(244, 48, 4);
+          }
+        }
+        .slide-description{
+          font-weight: 300;
+          font-size: 0.9rem;
+          color: #444;
+        }
+      }
+    }
+  }
 }
