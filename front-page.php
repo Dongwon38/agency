@@ -91,7 +91,7 @@ get_header();
 			<section class="work-section" id="work-section">
 				<div class="content-part">
 					<h2>Our Work</h2>	
-					<?php echo do_shortcode( '[carousel_slide id="131"]' ); ?>
+					<?php echo do_shortcode('[custom_slider]'); ?>
 				</div>
 				<div class="background-part">
 
