@@ -157,9 +157,17 @@ function whitespace_scripts() {
 	// header animaition JS
 	wp_enqueue_script ( 'custom-header', get_template_directory_uri() . '/js/custom-header.js', array(), _S_VERSION, true );
 
-	// Enqueue Google Fonts ('Inter and Bebas Neue')
+	// Enqueue Google Fonts 'Inter'
 	wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap', [], null);
 
+	  // Enqueue scroll down CTA
+	  wp_enqueue_script(
+        'hero-cta-script', 
+        get_template_directory_uri() . '/js/hero-script.js',
+        array('jquery'),
+        '1.0.0',
+        true
+    );
 	
 }
 add_action( 'wp_enqueue_scripts', 'whitespace_scripts' );

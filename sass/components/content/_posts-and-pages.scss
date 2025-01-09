@@ -14,6 +14,12 @@
 
 // custom layout for pages
 .site-main {
+  h2 {
+    font-size: 36px;
+    font-weight: 900;
+    margin: 0;
+    padding-bottom: 8px;
+  }
 }
 
 .site-main .content-part {
@@ -29,4 +35,10 @@
   margin-top: 3rem;
   padding-left: 16px;
   padding-right: 16px;
+  @media (min-width: 500px) {
+    margin: 3rem 3rem 0 3rem;
+  }
+  @media (min-width: $breakpoint-tablet-sm) {
+    margin: 5rem 5rem 0 5rem;
+  }
 }

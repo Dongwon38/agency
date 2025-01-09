@@ -1,167 +1,170 @@
 // Service Hero ================================================
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
-.service-section {
-    padding: 0 !important;
+.site-main .service-section {
+  padding: 0 !important;
+  margin-top: 2rem;
 }
 
 .service-section h2 {
-    padding: 1rem;
-    max-width: 50rem;
-    margin: 0 auto;
-    margin-top: 3rem;
+  padding: 1rem;
+  max-width: 50rem;
+  margin: 0 auto;
 }
 
 .service-description {
-    padding: 1rem;
-    max-width: 50rem;
-    margin: 0rem auto;
-    margin-bottom: 3rem;
+  padding: 1rem;
+  max-width: 50rem;
+  margin: 0rem auto;
+  margin-bottom: 3rem;
 }
 
 // Service Cards ================================================
 
 .service-header {
-    border-bottom: 2px solid #fff;
+  border-bottom: 2px solid #fff;
 }
 
 .service-card {
-    cursor: pointer;
-    background-color: #F3F7FA;
-    transition: background-color 0.2s ease-in-out;
-    padding: 0.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  cursor: pointer;
+  background-color: #f3f7fa;
+  transition: background-color 0.2s ease-in-out;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.service-card:hover, .service-card:focus {
-    background-color: #b4cde0;
-    transition: background-color 0.2s ease-in-out;
+.service-card:hover,
+.service-card:focus {
+  background-color: #b4cde0;
+  transition: background-color 0.2s ease-in-out;
 }
 
 .service-card h3 {
-    font-size: 0.9rem;
-    margin: 0.5rem;
+  font-size: 0.9rem;
+  margin: 0.5rem;
 }
 
 .service-card .pricing-icon {
-    width: 2rem;
-    margin: 0.5rem;
+  width: 2rem;
+  margin: 0.5rem;
+  opacity: 70%;
+}
+
+@media (min-width: 25rem) {
+  .service-card .pricing-icon {
+    margin-right: 2rem;
+  }
+}
+
+@media (min-width: 56.25rem) {
+  .service-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .service-card {
+    margin: 1rem;
+    padding: 3rem;
+    width: 29%;
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .service-card h3 {
+    margin: 0 auto;
+    width: 10rem;
+    font-size: 1.3rem;
+  }
+
+  .service-card .pricing-icon {
+    width: 8rem;
+    margin: 1rem;
     opacity: 70%;
-}
+  }
 
-@media(min-width: 25rem) {
-    .service-card .pricing-icon {
-        margin-right: 2rem;
-    }
-}
-
-@media(min-width: 56.25rem) {
-    .service-header {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .service-card {
-        margin: 1rem;
-        padding: 3rem;
-        width: 29%;
-        text-align: center;
-        flex-direction: column;
-    }
-    
-    .service-card h3 {
-        margin: 0 auto;
-        width: 10rem;
-        font-size: 1.3rem;
-    }
-
-    .service-card .pricing-icon {
-        width: 8rem;
-        margin: 1rem;
-        opacity: 70%;
-    }
-
-    .service-card img {
-        display: inline;
-        justify-content: center;
-    }
+  .service-card img {
+    display: inline;
+    justify-content: center;
+  }
 }
 
 // Service Details ================================================
 
 .single-service-detail {
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height 0.3s ease-in-out;
-    background-color: #F3F7FA;
-    padding: 0 2rem;
-    position: relative;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease-in-out;
+  background-color: #f3f7fa;
+  padding: 0 2rem;
+  position: relative;
 }
 
 .single-service-detail .pricing-icon {
-    display: none;
+  display: none;
 }
 
 .single-service-detail h4 {
-    font-size: 1.2rem;
-    margin-top: 4rem;
+  font-size: 1.2rem;
+  margin-top: 4rem;
 }
 
 .single-service-detail .details {
-    margin-bottom: 2.5rem;
-    max-width: 45rem;
+  margin-bottom: 2.5rem;
+  max-width: 45rem;
 }
 
 .single-service-detail .suitable-for {
-    max-width: 45rem;
+  max-width: 45rem;
 }
 
 .single-service-detail .pricing-tag {
-    font-size: 3rem;
-    margin: 1rem 0;
+  font-size: 3rem;
+  margin: 1rem 0;
 }
 
 .single-service-detail.accordion-active {
-    max-height: 50rem;
-    transition: max-height 0.3s ease-in-out;
+  max-height: 50rem;
+  transition: max-height 0.3s ease-in-out;
 }
 
 .contact-button {
-    text-decoration: none;
-    padding: 1rem 2rem;
-    border: 1px solid #fff;
-    border-radius: 1rem;
-    background-color: #fff;
-    color: black;
-    display: flex;
-    align-items: center;
-    width: fit-content;
-    margin-bottom: 4rem;
-    transition: background-color 0.2s ease-in-out;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  font-weight: 900;
+  background-color: #fff;
+  color: black;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  margin-bottom: 4rem;
+  transition: background-color 0.2s ease-in-out;
 }
 
 .contact-button:visited {
-    color: black;
+  color: black;
 }
 
-.contact-button:hover, .contact-button:focus {
-    background-color: #b4cde0;
-    transition: background-color 0.2s ease-in-out;
+.contact-button:hover,
+.contact-button:focus {
+  background-color: #b4cde0;
+  transition: background-color 0.2s ease-in-out;
 }
 
-@media(min-width: 56.25rem) {
-    .single-service-detail .pricing-icon {
-        display: block;
-        position: absolute;
-        z-index: 2;
-        top: 0rem;
-        right: -5rem;
-        width: 20rem;
-        opacity: 20%;
-    }
+@media (min-width: 56.25rem) {
+  .single-service-detail .pricing-icon {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    top: 0rem;
+    right: -5rem;
+    width: 20rem;
+    opacity: 20%;
+  }
 }
