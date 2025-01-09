@@ -96,7 +96,7 @@ get_header();
 
 			<section class="work-section" id="work-section">
 				<div class="content-part">
-					<h2>Our Work</h2>	
+					<h2>Our Work</h2>
 					<?php echo do_shortcode('[custom_slider]'); ?>
 				</div>
 				<div class="background-part">
@@ -117,7 +117,7 @@ get_header();
 			<section class="contact-section" id="contact-section">
 				<div class="content-part">
 					<div class="left-column">
-					<h2 id="contact-form">Contact Us</h2>
+					<h2 id="contact-form">Let's Work Together</h2>
 					<?php 
 					if ( have_rows( 'contact_section' ) ) :
 						while ( have_rows( 'contact_section' ) ) : the_row(); ?>
