@@ -117,7 +117,7 @@ get_header();
 			<section class="contact-section" id="contact-section">
 				<div class="content-part">
 					<div class="left-column">
-					<h2 id="contact-form">Let's Work Together</h2>
+					<h2 id="contact-form">Contact Us</h2>
 					<?php 
 					if ( have_rows( 'contact_section' ) ) :
 						while ( have_rows( 'contact_section' ) ) : the_row(); ?>
