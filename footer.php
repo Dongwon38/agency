@@ -17,10 +17,6 @@
 			<div class="legal-stuff">
 				<ul>
 					<li><p class="copyright">Copyright &copy; <?php echo date('Y'); ?> Whitespace Studio</p></li>
-					<p class="footer-separator">|</p>
-					<li><a href="<?php echo get_permalink( get_page_by_path('privacy-policy') ); ?>">Privacy Policy</a></li>
-					<p class="footer-separator">|</p>
-					<li><a href="<?php echo get_permalink( get_page_by_path('sample-page') ); ?>">Sample Page</a></li>
 				</ul>
 			</div>
 		</div><!-- .site-info -->
