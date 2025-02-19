@@ -45,7 +45,7 @@ get_header();
 			</section>
 
 			<section class="service-section" id="service-section">
-				<div class="content-part">
+				<div class="content-part animate-class">
 					<h2><?php echo esc_html("Our Services"); ?></h2>
 					<?php 
 					if ( have_rows( 'service_section' ) ) : 
@@ -53,7 +53,7 @@ get_header();
 							<p class="service-description"><?php echo get_sub_field( 'description' ); ?></p>
 							<?php 
 							if ( have_rows( 'pricing_type' ) ) : ?>
-								<div class="service-header">
+								<div class="service-header animate-class">
 									<?php
 									while( have_rows( 'pricing_type' ) ) : the_row(); ?>
 										<section class="service-card">
@@ -66,7 +66,7 @@ get_header();
 									<?php
 									endwhile; ?>
 								</div>
-								<div class="service-detail">
+								<div class="service-detail animate-class">
 									<?php
 									while( have_rows( 'pricing_type') ) : the_row(); ?>
 										<article class="single-service-detail">
@@ -95,7 +95,7 @@ get_header();
 			</section>
 
 			<section class="work-section" id="work-section">
-				<div class="content-part">
+				<div class="content-part animate-class">
 					<h2>Our Work</h2>
 					<?php echo do_shortcode('[custom_slider]'); ?>
 				</div>
@@ -105,7 +105,7 @@ get_header();
 			</section>
 
 			<section class="testimonial-section" id="testimonial-section">
-				<div class="content-part">
+				<div class="content-part animate-class">
 					<h2>Testimonials</h2>
 					<?php require get_template_directory() . '/inc/custom-testimonial.php'; ?>
 				</div>
@@ -115,7 +115,7 @@ get_header();
 			</section>
 
 			<section class="contact-section" id="contact-section">
-				<div class="content-part">
+				<div class="content-part animate-class">
 					<div class="left-column">
 					<h2 id="contact-form">Contact Us</h2>
 					<?php 
