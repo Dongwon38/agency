@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
         distance: '60px',
         origin: 'bottom',
         duration: 400,
-        easing: 'ease-in-out',
+        easing: 'ease-in',
         reset: true,
     });
 });
