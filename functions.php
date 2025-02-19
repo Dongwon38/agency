@@ -168,6 +168,11 @@ function whitespace_scripts() {
         '1.0.0',
         true
     );
+
+	// Enqueue ScrollReveal from CDN
+    wp_enqueue_script('scrollreveal', 'https://unpkg.com/scrollreveal', array(), null, true);
+
+	wp_enqueue_script('custom-scrollreveal', get_template_directory_uri() . '/js/scroll-reveal.js', array('scrollreveal'), null, true);
 	
 }
 add_action( 'wp_enqueue_scripts', 'whitespace_scripts' );
